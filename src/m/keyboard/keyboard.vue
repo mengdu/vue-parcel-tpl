@@ -103,7 +103,7 @@ export default {
           {name: ',', default: ',', upper: ','},
           {name: 'space', default: 'space', upper: 'Space'},
           {name: '.', default: '.', upper: '.'},
-          {name: 'lang', default: '英'},
+          {name: 'lang', default: this.langType === 'en' ? '英' : '中'},
           {name: 'enter', default: 'enter', upper: 'Enter'}
         ]
       ]
@@ -137,14 +137,14 @@ export default {
           this.$emit('back')
           break
         default:
-          var chart = ''
+          var ch = ''
           if (key.name === 'space') {
-            chart = ' '
+            ch = ' '
           } else {
-            chart = this.isSymbol ? key.symbol : (this.isCapsLock ? key.upper : key.default)
+            ch = this.isSymbol ? key.symbol : (this.isCapsLock ? key.upper : key.default)
           }
-          // console.log(chart)
-          this.$emit('key', chart, this)
+          // console.log('this', this)
+          this.$emit('key', ch, this)
       }
     }
   }

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from './pages/home'
+import Demo from './pages/demo'
 // import Login from './pages/login'
 
 Vue.use(VueRouter)
@@ -22,6 +23,7 @@ export default new VueRouter ({
   mode: 'hash',
   routes: [
     {path: '/', component: Home},
+    {path: '/demo', component: Demo}
     // {path: '/login', component: () => import('./pages/login')},
     // {path: '/login', component: Login}
   ]
